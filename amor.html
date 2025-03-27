@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversario Amor</title>
+<style>
+    body {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradiente de fondo */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Ancho fijo para el contenedor */
+}
+
+#capibara {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px; /* Mantiene la proporción */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    object-fit: cover; /* Asegura que la imagen cubra el área */
+    margin-bottom: 1rem;
+    border: 5px solid #feb47b; /* Borde dorado */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #ff7e5f; /* Color de borde al enfocar */
+    outline: none; /* Elimina el contorno por defecto */
+}
+
+button {
+    padding: 0.7rem;
+    background-color: #ff7e5f; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #feb47b; /* Color de fondo al pasar el mouse */
+}
+
+#message {
+    margin-top: 1rem;
+    color: red;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Aniversario Amor </h1>
+        <img id="capibara" src="https://th.bing.com/th/id/R.e975f236c057f9a438a66aa5dbf30bd4?rik=6MAX8X%2b9ddlSGQ&pid=ImgRaw&r=0" alt="Capibara" />
+        <form id="loginForm">
+            <label for="username">Nombre:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Fecha de Aniversario:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p id="message"></p>
+        <audio id="capibaraSong" src=""></audio>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío del formulario
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const message = document.getElementById('message');
+    const song = document.getElementById('capibaraSong');
+
+    // Validación simple (puedes personalizar esto)
+    if (username === "yoselin" && password === "27/02/2025") {
+        message.style.color = "green";
+        message.textContent = "¡Inicio de sesión exitoso!";
+        location.href = "carta.html";
+    } else {
+        message.style.color = "red";
+        message.textContent = "Usuario o contraseña incorrectos .";
+    }
+});
+
+    </script>
+    
+</body>
+</html>
